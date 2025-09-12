@@ -1,21 +1,24 @@
+//App.jsx
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './components/Home'
-import NavBar from './Components/NavBar'
+import Home from './Components/Home'
 import NavBar2 from './Components/NavBar2'
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Profile from './components/Profile'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-  // first value i.e., count stores the current value and the second value i.e., setcount is used to update the first value.
 
   return (
-    <div>
-      <NavBar></NavBar>
-      {/* <NavBar2 /> */}
-    </div>
+    <Router>
+      <NavBar2 />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />} />
+      </Routes>
+    </Router>
   )
 }
 
