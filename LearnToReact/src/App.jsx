@@ -1,8 +1,4 @@
-//App.jsx
 
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Home from './Components/Home'
 import NavBar2 from './Components/NavBar2'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
