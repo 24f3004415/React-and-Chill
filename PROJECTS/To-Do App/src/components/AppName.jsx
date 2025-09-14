@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './AppName.module.css'
 
 const AppName = () => {
   return (
-    <h1>
+    <h1 className={styles.todoHeading}>
       To-Do App
     </h1>
   )
