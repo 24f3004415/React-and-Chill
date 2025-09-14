@@ -1,0 +1,22 @@
+
+
+body{
+  overflow-x: hidden;
+}
+
+input {
+  width: 100%;
+}
+
+.items-container {
+  text-align: left;
+}
+
+.kg-button {
+  min-width: 80px;
+  margin-left: 30%;
+}
+
+.kg-row {
+  margin: 10px 5px;
+}
