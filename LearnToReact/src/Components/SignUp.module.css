@@ -1,0 +1,40 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column; /* stack items */
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
+  height: 100vh; /* full page height */
+  /* border: 3px solid red; */
+}
+
+.container h1{
+    font-family: Gilroy;
+    font-size: 29px;
+}
+
+form {
+    /* border: 3px solid black; */
+    height: 50vh;
+    width: 25vw;
+}
+
+form input{
+    width: 100%;
+    border: 2px solid #0099FF;
+    padding: 10px;
+    color: 0099FF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+form button{
+    /* border: 2px solid blue; */
+    padding: 10px;
+    width: 100%;
+    background-color: #0099FF;
+    font-family: gilroy;
+    color: white;
+    border-radius: 20px;
+}
