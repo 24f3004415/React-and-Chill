@@ -37,4 +37,5 @@ form button{
     font-family: gilroy;
     color: white;
     border-radius: 20px;
+    cursor: pointer;
 }

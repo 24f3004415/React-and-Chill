@@ -7,7 +7,7 @@ const NavBar2 = () => {
     { name: "Home", icon: <House color="#000000" />, path: "/" },
     { name: "About", icon: <BookCopy color="#000000" />, path: "/about" },
     { name: "Contact", icon:<CircleUser color="#000000" />, path: "/contact" },
-    { name: "Login", icon: <LogIn color="#000000" />, path: "/login" }
+    { name: "Signup", icon: <LogIn color="#000000" />, path: "/Signup" }
   ];
 
   return (

@@ -1,8 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from './SignUp.module.css'
+import { useNavigate } from 'react-router-dom'
+
 
 const SignUp = () => {
+
+    let navigate = useNavigate();
 
     let [Name, setName] = useState("")
     let [Email, setEmail] = useState("")
@@ -12,6 +16,9 @@ const SignUp = () => {
 
     function HandleSubmit(dets) {
         dets.preventDefault();
+
+        
+
 
         if (!Name || !Email || !Password || !Cpassword) {
             alert("All Fields are Mandatory");
@@ -45,7 +52,7 @@ const SignUp = () => {
                 <button type='submit'>SIGN UP</button>
 
             </form>
-            <p>Already have account? <a href="#" target='blank' >Login</a></p>
+            <p>Already have account? <button onClick={ ()=> navigate('/LogIn') } >Login</button></p>
 
 
         </div>
