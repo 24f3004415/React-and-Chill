@@ -9,6 +9,7 @@ import LogIn from './Components/LogIn'
 import MiniDrawer from './Components/MiniDrawer'
 import Contact from './Components/Contact'
 import Card from './Components/Day-1/Card'
+import JobList from './Components/Day-3/JobList'
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Home />} />
+        <Route path='/job' element={<JobList />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/Signup' element={<SignUp />}></Route>
         <Route path='/Login' element={<LogIn />}></Route>

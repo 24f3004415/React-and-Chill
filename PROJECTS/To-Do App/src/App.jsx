@@ -19,10 +19,15 @@ const App = () => {
 
   const [todoItems, setTodoItems] = useState(initialToDoItems)
 
+  let handleNewitem=(Todo, todoDue)=> {
+    console.log(`Due task: ${Todo}  Due date: ${todoDue}`);
+    
+  }
+
   return (
     <center className="todo-container">
       <AppName />
-      <AddTodo />
+      <AddTodo onAddclick={handleNewitem} />
       <ToDoItems toDoItems={todoItems} ></ToDoItems>
 
     </center>
