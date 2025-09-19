@@ -9,16 +9,7 @@ import WelcomeMessage from "./components/WelcomeMessage";
 
 const App = () => {
 
-  let initialToDoItems = [{
-    name: "Buy Milk",
-    dueDate: "4/10/2023"
-  },
-  {
-    name: "Go TO College",
-    dueDate: "4/10/2023"
-  }]
-
-  const [todoItems, setTodoItems] = useState(initialToDoItems)
+  const [todoItems, setTodoItems] = useState([])
 
   let handleNewitem = (Todo, todoDue) => {
     console.log(`Due task: ${Todo}  Due date: ${todoDue}`);
@@ -33,7 +24,9 @@ const App = () => {
   }
 
 const handleDelete = (todoName)=>{
-  console.log(`Item Deleted: ${ todoName }`)
+
+  const newTodoItems = todoItems.filter((iter)=> iter.name!== todoName)
+  setTodoItems(newTodoItems)
 }
 
   return (
