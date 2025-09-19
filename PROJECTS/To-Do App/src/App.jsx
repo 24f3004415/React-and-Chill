@@ -19,9 +19,16 @@ const App = () => {
 
   const [todoItems, setTodoItems] = useState(initialToDoItems)
 
-  let handleNewitem=(Todo, todoDue)=> {
+  let handleNewitem = (Todo, todoDue) => {
     console.log(`Due task: ${Todo}  Due date: ${todoDue}`);
-    
+
+    const newTodoItems = [
+      ...todoItems, {
+        name: Todo,
+        dueDate: todoDue
+      }
+    ]
+    setTodoItems(newTodoItems)
   }
 
   return (
