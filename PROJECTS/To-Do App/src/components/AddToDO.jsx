@@ -1,30 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 const AddToDO = ({ onAddclick }) => {
 
-    const [dueItem, setDueitem] = useState()
-    const [dueDate, setDuedate] = useState()
+    const setItemElement = useRef();
+    const setDueDateElement = useRef();
 
-    const handlesetDueitem = (event) => {
-        setDueitem(event.target.value)
-    }
-    const handlesetDueitemdate = (event) => {
-        setDuedate(event.target.value)
-    }
-
-    const onAddBottonclicked = ()=>{
+    const onAddBottonclicked = (e) => {
+        e.preventDefault();
+        const dueItem = setItemElement.current.value;
+        const dueDate = setDueDateElement.current.value;
+        setItemElement.current.value = "";
+        setDueDateElement.current.value = "";
         onAddclick(dueItem, dueDate)
-        setDueitem("")
-        setDuedate("")
     }
     return (
         <div className="container text-center">
             <div className="row kg-row">
                 <div className="col-6">
-                    <input type="text" placeholder="Enter Todo Here" onChange={handlesetDueitem} value={ dueItem }/>
+                    <input type="text" ref={setItemElement} placeholder="Enter Todo Here" />
                 </div>
                 <div className="col-4">
-                    <input type="date" onChange={ handlesetDueitemdate } value={ dueDate } />
+                    <input type="date" ref={setDueDateElement} />
                 </div>
                 <div className="col-2">
                     <button onClick={onAddBottonclicked} type="button" className="btn btn-success  w-50">
