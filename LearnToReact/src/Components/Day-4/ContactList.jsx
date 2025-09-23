@@ -21,20 +21,27 @@ const ContactList = () => {
 
                             <label for="country" class="block text-sm/6 font-medium ">Relation:</label>
 
-                            <select id="country" name="country" autocomplete="country-name" class="col-start-1 row-start-1 w-full  rounded-md bg-white/5 p-2  outline-3 -outline-offset-2 outline-blue-500/100  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
-                                <option>Father</option>
-                                <option>Mother</option>
-                                <option>Brother</option>
-                                <option>Sister</option>
-                                <option>Uncle</option>
-                                <option>Aunt</option>
-                                <option>Grand-Father</option>
-                                <option>Grand-Mother</option>
-                                <option>Cousin</option>
-                                <option>Niece</option>
-                                <option>Nephew</option>
-                                <option>Son</option>
-                                <option>Daughter</option>
+                            <select
+                                id="country"
+                                name="country"
+                                autoComplete="country-name"
+                                className="col-start-1 row-start-1 w-full rounded-md bg-white/5 p-2 outline-3 -outline-offset-2 outline-blue-500/100 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                            >
+                                <option value="">Add Relation</option>
+                                <option value="father">Father</option>
+                                <option value="friend">Friend</option>
+                                <option value="mother">Mother</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="uncle">Uncle</option>
+                                <option value="aunt">Aunt</option>
+                                <option value="grandfather">Grand-Father</option>
+                                <option value="grandmother">Grand-Mother</option>
+                                <option value="cousin">Cousin</option>
+                                <option value="niece">Niece</option>
+                                <option value="nephew">Nephew</option>
+                                <option value="son">Son</option>
+                                <option value="daughter">Daughter</option>
                             </select>
 
                             <button
