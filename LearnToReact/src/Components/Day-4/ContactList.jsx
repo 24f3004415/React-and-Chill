@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ContactList.module.css'
+import ContactCard from './ContactCard'
 
 const ContactList = () => {
     return (
@@ -11,15 +12,15 @@ const ContactList = () => {
                 <div className={styles.container} >
                     <div className={styles.AddContact} >
                         <form className={styles.form}>
-                            <label for="username" class="block text-sm/6 font-medium">Contact Name:</label>
+                            <label htmlFor="username" className="block text-sm/6 font-medium">Contact Name:</label>
 
-                            <input id="username" type="text" name="username" placeholder="Enter The Contact Name" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+                            <input id="username" type="text" name="username" placeholder="Enter The Contact Name" className="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
 
-                            <label for="username" class="block text-sm/6 font-medium">Contact Number:</label>
+                            <label htmlFor="username" className="block text-sm/6 font-medium">Contact Number:</label>
 
-                            <input id="username" type="text" name="username" placeholder="Enter The Contact Number" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+                            <input id="username" type="text" name="username" placeholder="Enter The Contact Number" className="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
 
-                            <label for="country" class="block text-sm/6 font-medium ">Relation:</label>
+                            <label htmlFor="country" className="block text-sm/6 font-medium ">Relation:</label>
 
                             <select
                                 id="country"
@@ -65,13 +66,7 @@ const ContactList = () => {
                             className="w-full py-2 px-3 text-sm border border-gray-300 rounded-lg placeholder:text-gray-500 focus:outline-none focus:border-blue-500"
                         />
 
-                        <div className={styles.contactsGrid}>
-                            <div className={styles.ContactBookDeatils}>
-                                <h2 className='text-lg font-semibold'>Contact Name</h2>
-                                <p className='text-gray-500'>Contact Number</p>
-                                <p className='text-gray-800 font-semibold'>relation</p>
-                            </div>
-                        </div>
+                        <ContactCard />
                     </div>
                 </div>
 
