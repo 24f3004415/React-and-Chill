@@ -8,49 +8,34 @@ import styles from './App.module.css'
 import LogIn from './Components/LogIn'
 import MiniDrawer from './Components/MiniDrawer'
 import Contact from './Components/Contact'
-import Card from './Components/Day-1/Card'
 import JobList from './Components/Day-3/JobList'
+import CardContain from './Components/Day-1/CardContain'
+import ContactList from './Components/Day-4/ContactList'
 
 function App() {
 
   return (
     <Router>
       <NavBar2 />
-      <div className={styles.cardscontainers} >
-        <Card bname='Mohit'
-        job='Digital Solutions'
-        phone='9304495153'
-        email='mohitrai.thehamiltonacademy@gmail.com'
-        image='https://i.pravatar.cc/300
-' />
-      <Card bname='Mohit'
-        job='Digital Solutions'
-        phone='9304495153'
-        email='mohitrai.thehamiltonacademy@gmail.com'
-        image='https://i.pravatar.cc/300
-' />
-      <Card bname='Mohit'
-        job='Digital Solutions'
-        phone='9304495153'
-        email='mohitrai.thehamiltonacademy@gmail.com'
-        image='https://i.pravatar.cc/300
-' />
-      <Card bname='Mohit'
-        job='Digital Solutions'
-        phone='9304495153'
-        email='mohitrai.thehamiltonacademy@gmail.com'
-        image='https://i.pravatar.cc/300
-' />
+      <div  >
+        
+
+
+      
+
       </div>
       <Routes>
 
         <Route path='/' element={<Home />} />
         <Route path='/job' element={<JobList />} />
+        <Route path='/card' element={<CardContain />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/Signup' element={<SignUp />}></Route>
         <Route path='/Login' element={<LogIn />}></Route>
         <Route path='/MiniDrawer' element={<MiniDrawer />}></Route>
         <Route path='/Contact' element={<Contact />}></Route>
+        <Route path='/JobList' element={<JobList  />}></Route>
+        <Route path='/ContactList' element={<ContactList  />}></Route>
 
       </Routes>
     </Router>
