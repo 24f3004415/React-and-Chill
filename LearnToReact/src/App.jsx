@@ -11,6 +11,7 @@ import Contact from './Components/Contact'
 import JobList from './Components/Day-3/JobList'
 import CardContain from './Components/Day-1/CardContain'
 import ContactList from './Components/Day-4/ContactList'
+import Stopwatch from './Components/Day-5/Stopwatch'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
       <div  >
         
 
-
+<Stopwatch />
       
 
       </div>

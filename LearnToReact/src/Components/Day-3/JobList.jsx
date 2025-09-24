@@ -45,69 +45,69 @@ function JobList() {
       {/* Job Form */}
       <div className="flex ">
         <div >
-        <form
-        onSubmit={handleSubmit}
-        className="grid gap-4 p-4 border rounded bg-white shadow mb-6 flex"
-      >
-        <input
-          type="text"
-          placeholder="Job Title"
-          value={formData.title}
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          className="p-2 border rounded"
-        />
-        <input
-          type="text"
-          placeholder="Company"
-          value={formData.company}
-          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-          className="p-2 border rounded"
-        />
-        <input
-          type="text"
-          placeholder="Location"
-          value={formData.location}
-          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-          className="p-2 border rounded"
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-        >
-          Add Job
-        </button>
-      </form>
-      </div>
-
-      {/* Search Input */}
-      <div className="ml-5">
-        <input
-        type="text"
-        placeholder="Search by location..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 border rounded mb-6"
-      />
-
-      {/* Job Cards */}
-      <div className="grid gap-4 flex">
-        {filteredJobs.length > 0 ? (
-          filteredJobs.map((job) => (
-            <JobCard
-              key={job.id}
-              title={job.title}
-              company={job.company}
-              location={job.location}
+          <form
+            onSubmit={handleSubmit}
+            className="grid gap-4 p-4 border rounded bg-white shadow mb-6 flex"
+          >
+            <input
+              type="text"
+              placeholder="Job Title"
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              className="p-2 border rounded"
             />
-          ))
-        ) : (
-          <p className="text-gray-500">No jobs found.</p>
-        )}
-      </div>
-      </div>
+            <input
+              type="text"
+              placeholder="Company"
+              value={formData.company}
+              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+              className="p-2 border rounded"
+            />
+            <input
+              type="text"
+              placeholder="Location"
+              value={formData.location}
+              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              className="p-2 border rounded"
+            />
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+            >
+              Add Job
+            </button>
+          </form>
+        </div>
+
+        {/* Search Input */}
+        <div className="ml-5">
+          <input
+            type="text"
+            placeholder="Search by location..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-2 border rounded mb-6"
+          />
+
+          {/* Job Cards */}
+          <div className="grid gap-4 flex">
+            {filteredJobs.length > 0 ? (
+              filteredJobs.map((job) => (
+                <JobCard
+                  key={job.id}
+                  title={job.title}
+                  company={job.company}
+                  location={job.location}
+                />
+              ))
+            ) : (
+              <p className="text-gray-500">No jobs found.</p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default JobList;
+export default JobList;
