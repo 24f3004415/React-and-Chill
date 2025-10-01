@@ -12,16 +12,18 @@ import JobList from './Components/Day-3/JobList'
 import CardContain from './Components/Day-1/CardContain'
 import ContactList from './Components/Day-4/ContactList'
 import Stopwatch from './Components/Day-5/Stopwatch'
+import Jokeapi from './Components/Day-6/Jokeapi'
 
 function App() {
 
   return (
     <Router>
       <NavBar2 />
+      
       <div  >
         
 
-<Stopwatch />
+
       
 
       </div>
@@ -37,8 +39,11 @@ function App() {
         <Route path='/Contact' element={<Contact />}></Route>
         <Route path='/JobList' element={<JobList  />}></Route>
         <Route path='/ContactList' element={<ContactList  />}></Route>
+        <Route path='/Joke' element={<Jokeapi  />}></Route>
 
       </Routes>
+    <Stopwatch />
+
     </Router>
   )
 }
