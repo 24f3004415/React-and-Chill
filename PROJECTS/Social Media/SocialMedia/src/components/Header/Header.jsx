@@ -7,14 +7,15 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import styles from './Header.module.css'
 
 const Header = () => {
     return (
-        <div>
-            <Navbar expand="lg" className="bg-body-tertiary">
+        <div className={ styles.container }>
+            <Navbar expand="lg" className="bg-dark ">
                 <Container>
 
-                    <Navbar.Brand href="#home">Social-Media</Navbar.Brand>
+                    <Navbar.Brand href="#home" className='text-light'>Social-Media</Navbar.Brand>
                     <Form inline>
                         <InputGroup>
                             <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
@@ -28,8 +29,8 @@ const Header = () => {
                     <Button variant="primary">LogIn</Button>
                     <Button variant="secondary">SignUp</Button>
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Toggle className='bg-light' aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className='text-light'>
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#link">Link</Nav.Link>
