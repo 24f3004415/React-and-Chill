@@ -1,11 +1,18 @@
-import { Button } from "@/components/ui/button"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
-function App() {
+export default function App({ children }) {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button variant='default' >Click me Baby</Button>
+    <div>
+      <div className="SideBar">
+        <SidebarProvider>
+          <AppSidebar />
+          <main>
+            <SidebarTrigger className='size-sm' />
+            {children}
+          </main>
+        </SidebarProvider>
+      </div>
     </div>
   )
 }
-
-export default App
