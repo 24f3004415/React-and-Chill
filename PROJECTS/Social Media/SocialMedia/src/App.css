@@ -1,4 +1,10 @@
-body {
-  background-color: black;
-  color: white;
+.appContainer{
+  display: flex;
+  /* border: 3px solid blue; */
+}
+
+.content{
+    min-width: 81.5vw;
+    /* border: 2px solid red; */
+    /* overflow-x: hidden; */
 }
