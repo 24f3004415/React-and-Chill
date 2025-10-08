@@ -8,7 +8,7 @@ import { useState } from "react"
 
 export default function App({ children }) {
 
-  const [selectedTab, setSelectedTab] = useState('Home')
+  const [selectedTab, setSelectedTab] = useState('Create Post')
 
   return (
     <div className="border-2  grid grid-cols-[auto_1fr]">
@@ -16,9 +16,9 @@ export default function App({ children }) {
       {/* Sidebar */}
       <div className="SideBar border-3 ">
         <SidebarProvider >
-          <AppSidebar />
-          <main>
-            <SidebarTrigger className="size-sm" />
+          <AppSidebar selectedTab={selectedTab} onTabChange={(tab) => setSelectedTab(tab)} />
+          <main className="">
+            <SidebarTrigger className="fixed" />
             {children}
           </main>
         </SidebarProvider>

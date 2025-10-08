@@ -20,11 +20,6 @@ const items = [
     icon: House,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
     title: "Create Post",
     url: "#",
     icon: BadgePlus,
@@ -33,15 +28,10 @@ const items = [
     title: "Search",
     url: "#",
     icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
+  }
 ]
 
-export function AppSidebar() {
+export function AppSidebar({ selectedTab, onTabChange }) {
   return (
     <Sidebar variant='floating' collapsible="icon">
       <SidebarContent>
@@ -51,11 +41,14 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
+                  <SidebarMenuButton asChild onClick={() => onTabChange(item.title)}
+                    className={`cursor-pointer ${selectedTab === item.title
+                        ? "bg-blue-500 text-white"
+                        : "hover:bg-blue-500 "}`} >
+                    <div className="flex items-center gap-2 p-2 rounded-md">
+                      <item.icon className="w-5 h-5" />
                       <span>{item.title}</span>
-                    </a>
+                    </div>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
