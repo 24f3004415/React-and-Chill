@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 
 const CreatePost = () => {
     return (
-        <Card className="w-full max-w-sm">
+        <Card className="w-full max-w-sm border-2  mt-6 shadow-2xl shadow-yellow-500/60">
             <CardHeader>
                 <CardTitle>Login to your account</CardTitle>
                 <CardDescription>
@@ -52,7 +52,7 @@ const CreatePost = () => {
                 <Button variant="outline" className="w-full">
                     Login with Google
                 </Button>
-                
+
             </CardFooter>
         </Card>
     );

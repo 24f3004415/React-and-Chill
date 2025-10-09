@@ -43,9 +43,9 @@ export function AppSidebar({ selectedTab, onTabChange }) {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild onClick={() => onTabChange(item.title)}
                     className={`cursor-pointer ${selectedTab === item.title
-                        ? "bg-blue-500 text-white"
-                        : "hover:bg-blue-500 "}`} >
-                    <div className="flex items-center gap-2 p-2 rounded-md">
+                      ? "bg-blue-500 text-white"
+                      : "hover:bg-blue-500 "}`} >
+                    <div className="flex items-center  gap-2 p-2 rounded-md ">
                       <item.icon className="w-5 h-5" />
                       <span>{item.title}</span>
                     </div>
