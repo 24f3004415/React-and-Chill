@@ -6,16 +6,16 @@ import {
     ItemHeader,
     ItemTitle,
 } from "@/components/ui/item";
+import { Badge } from "@/components/ui/badge";
 
-export function Post() {
+export function Post({ post }) {
     return (
         <div className="w-full max-w-xl mx-auto my-4">
-            <Item className="border rounded-2xl shadow-sm  hover:shadow-md transition p-4  bg-gradient-to-r from-slate-300 to-slate-500">
-
+            <Item className="border rounded-2xl shadow-sm hover:shadow-md transition p-4 bg-gradient-to-r from-slate-300 to-slate-500">
                 {/* Post Header (User Info) */}
                 <ItemHeader className="flex items-center gap-3 border-b pb-3">
                     <div>
-                        <h3 className="font-semibold text-sm text-black">Mohit rai</h3>
+                        <h3 className="font-semibold text-sm text-black">{post.userId}</h3>
                         <p className="text-xs text-gray-500">2 hours ago</p>
                     </div>
                 </ItemHeader>
@@ -23,16 +23,20 @@ export function Post() {
                 {/* Post Content */}
                 <ItemContent className="mt-3">
                     <ItemTitle className="text-lg font-semibold text-black">
-                        Just finished my new project! 🚀
+                        {post.title}
                     </ItemTitle>
-                    <ItemDescription className="text-sm  mt-2 text-black">
-                        It’s a social media platform built with React and Tailwind CSS.
-                        Feeling super excited to share it with you all!
+                    <ItemDescription className="text-sm mt-2 text-black">
+                        {post.body}
                     </ItemDescription>
 
-                    {/* Optional Image */}
-                    <div className="mt-3 rounded-lg overflow-hidden">
-
+                    {/* <-- wrapper with flex + gap */}
+                    <div className="flex flex-wrap gap-2 mt-3 items-center">
+                        {post.tags.map((BadgeIter, index) => (
+                            // force inline display on the Badge component in case it defaults to block
+                            <Badge key={index} variant="secondary" >
+                                {BadgeIter}
+                            </Badge>
+                        ))}
                     </div>
                 </ItemContent>
             </Item>
