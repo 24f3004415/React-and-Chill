@@ -9,7 +9,7 @@ import PostListProvider from "./Context/PostList_context"
 
 export default function App({ children }) {
 
-  const [selectedTab, setSelectedTab] = useState('Create Post')
+  const [selectedTab, setSelectedTab] = useState('Home')
 
   return (
     <PostListProvider>
@@ -26,6 +26,7 @@ export default function App({ children }) {
           </SidebarProvider>
         </div>
 
+
         {/* Header + Content */}
         <div >
           <Header />
@@ -34,6 +35,7 @@ export default function App({ children }) {
             {selectedTab === 'Home' ? <PostList></PostList> : <CreatePost></CreatePost>}
           </center>
         </div>
+
 
       </div>
     </PostListProvider>
