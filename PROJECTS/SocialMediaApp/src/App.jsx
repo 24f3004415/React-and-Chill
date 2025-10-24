@@ -9,7 +9,7 @@ import PostListProvider from "./Context/PostList_context"
 
 export default function App({ children }) {
 
-  const [selectedTab, setSelectedTab] = useState('Create post')
+  const [selectedTab, setSelectedTab] = useState('Home')
 
   return (
     <PostListProvider>
