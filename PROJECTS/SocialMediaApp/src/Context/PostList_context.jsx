@@ -14,8 +14,15 @@ export const PostList = createContext(DEFAULT_CONTEXT)
 
 // This is the function coming from useReducer to manage the state of postList
 const postListReducer = (currentPostList, action) => {
+    let newPostlist = currentPostList;
+    if (action.type === 'DELETE_POST') {
+        newPostlist = currentPostList.filter((post) => post.id !== action.payload.postId);
+    }
+    else if (action.type === 'ADD_POST') {
+        newPostlist =[ action.payload, ...currentPostList ]
+    }
     return (
-        currentPostList
+        newPostlist
     )
 }
 
@@ -24,11 +31,27 @@ const PostListProvider = ({ children }) => {
 
     const [postList, dispatchPostlist] = useReducer(postListReducer, DEFAULT_POST_LIST)
 
-    const addPost = () => {
+    const addPost = (userId, postTitle, postContent, hashtags) => {
+
+        dispatchPostlist({
+            type: 'ADD_POST',
+            payload: {
+                id: Date.now(),
+                title: postTitle,
+                body: postContent,
+                userId: userId,
+                tags: hashtags,
+            }
+        })
 
     }
-    const deletePost = () => {
-
+    const deletePost = (postId) => {
+        dispatchPostlist({
+            type: 'DELETE_POST',
+            payload: {
+                postId,
+            }
+        })
     }
     return (
         <PostList.Provider value={{ postList, addPost, deletePost }} >
@@ -43,7 +66,7 @@ const DEFAULT_POST_LIST =
             title: "Just finished my React project! 🚀",
             body: "After weeks of hard work, finally deployed my first full-stack social media app. Learned so much about Context API, useReducer, and component architecture. Feeling accomplished!",
             reactions: 42,
-            userId: "dev_rahul",
+            userId: "dev_mohit",
             tags: ["#react", "#webdev", "#milestone", "#coding"]
         },
         {

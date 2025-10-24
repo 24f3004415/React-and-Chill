@@ -13,7 +13,8 @@ const Header = () => {
 
       {/* Buttons */}
       <Button variant="default">LogIn</Button>
-      <Button variant="default">SignUp</Button>
+      <Button variant="secondary">SignUp</Button>
+      <Button variant="destructive">LogOut</Button>
     </div>
   )
 }
